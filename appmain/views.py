@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+# MAH VIEWS ALL DEM VIEWS VIEWS FROM THE SIX
+
+def index(request):
+
+	# main view
+	return render(request, 'index.html')

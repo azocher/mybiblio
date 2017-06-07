@@ -1,16 +1,17 @@
-{% extends 'layouts/base.html' %}
-<!-- individual book descrip biblioapp --> 
+{% extends '../layouts/base.html' %}
+<!-- individual book description biblioapp --> 
 	{% block title %}
 		{{ book.name }} - {{ block.super }} 
 	{% endblock %}
 	
 	{% block content %}
-		{% for book in books %}
-			<ul>
-				<li>{{ book.name }}
-				<li>{{ book.author }}
-				<li>{{ book.description }}
-			</ul>
-		{% endfor %}	
+		<ul>
+			<li>{{ book.name }}
+			<li>{{ book.author }}
+			<li>{{ book.description }}
+			<li><a href="{% url 'edit_book' slug=book.slug %}">Edit me!</a>
+		</ul>
+			
 	{% endblock %}
+
 

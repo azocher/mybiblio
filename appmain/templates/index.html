@@ -1,12 +1,18 @@
 {% extends 'layouts/base.html' %}
 <!-- index main biblioapp --> 
 	{% block title %}
-		Current Index Page - {{ block.super }} 
+		Main - {{ block.super }} 
 	{% endblock %}
 	
 	{% block content %}
-		<h1>Hello, World!</h1>
-		<p>This is our main index page</p>
-		<p>Testing variables. Test number is: {{ number }}</p>
+		{% for book in books %}
+			<ul>
+				<li><a href="{% url 'book_detail' slug=book.slug %}">
+					{{ book.name }}
+					</a>
+				<li>{{ book.author }}
+				<li>{{ book.description }}
+			</ul>
+		{% endfor %}	
 	{% endblock %}
 
